@@ -13,6 +13,7 @@ def combination(n,k):
 print(combination(4,2))
 print(combination(40,20))
 
+# 137846528820
 
 
 #here's another way to solve it from:
@@ -41,11 +42,12 @@ def recPath(gridSize):
  
     return paths
  
-##start = time.time()
-##result = recPath(gridSize)
-##elapsed = time.time() - start
+start = time.time()
+result = recPath(gridSize)
+
+elapsed = time.time() - start
 ## 
-##print "result %s found in %s seconds" % (result, elapsed)
+print "result %s found in %s seconds" % (result, elapsed)
 
 
 #alternatively, look at the number of paths to each endpoint. this is
