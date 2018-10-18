@@ -1,3 +1,4 @@
+## used python3 to avoid numpy install problem. weird.
 #https://projecteuler.net/problem=11
 
 import numpy

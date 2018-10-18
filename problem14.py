@@ -61,18 +61,21 @@ def collatztwo(n, soldict):
 
 
 
-def runner():
+def runner(limit):
     soldict = {}
-    for x in range(1,1000000):
+    for x in range(1,limit):
         soldict = collatztwo(x, soldict)
     
-    print(max(soldict, key=soldict.get), "<==max")
+    print(max(soldict, key=soldict.get), "<==max", soldict)
 
 
-##soldict = {}
-##for x in range(1,10):
-##    soldict = collatztwo(x, soldict)
-##
-##print(max(soldict, key=soldict.get), soldict)
+# soldict = {}
+# for x in range(1,10):
+#     soldict = collatztwo(x, soldict)
 
-print(timeit.Timer(lambda:runner()).timeit(number=5))
+# print(max(soldict, key=soldict.get), soldict)
+
+## just pull out the largest value 
+runner(1000000)
+
+# print(timeit.Timer(lambda:runner()).timeit(number=5))
