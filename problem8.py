@@ -55,7 +55,7 @@ def search(inputstring, adjdigits):
 
     print(maximum)
 
-# 9 × 9 × 8 × 9 = 5832
+# 5832
 search(inputstring, 4)
 
 search(inputstring, 13)

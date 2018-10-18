@@ -10,6 +10,7 @@ def rollthru(limit):
 
                 
                 print(a,b,c)
+                print(a * b * c)
                 
                 if addstothousand(a,b,c):
                     print("got 'em")

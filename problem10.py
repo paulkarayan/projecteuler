@@ -5,7 +5,7 @@
 
 import math
 
-def findprimes(limit,sieve, plist, maxp): # sieve of eratosthenes w/ tricks
+def findprimes(limit, sieve, plist, maxp): # sieve of eratosthenes w/ tricks
     #print(limit, sieve, plist, "inputs")
     if not plist:
         sieve = [1] * int(math.sqrt(limit))
@@ -30,6 +30,7 @@ def findprimes(limit,sieve, plist, maxp): # sieve of eratosthenes w/ tricks
             x = 1
 
             if pos >= maxp:
+                print("hit the limit")
                 return(p, limit, sieve)
             
             #set all the multiples of prime to 0
@@ -51,15 +52,20 @@ primes = []
 sieve = []
 counter = 10
 maxp = 2000000
-while 1:
+# maxp = 10
+limit = 10000
+counter_ceiling = 100000000000000
+
+while limit <= counter_ceiling:
     counter *= 10
     primes, limit, sieve = findprimes(counter, sieve, primes, maxp)
-    print(counter, "<=resized")
-    if primes[-1] > maxp:
-        print("list completed")
+    print(counter, "<=resized", primes)
+
+    if primes[-1] >= maxp:
         break
-        
-    #print(primes, limit, len(primes), "<--outer loop")
 
+print(primes, limit, len(primes), "<--outer loop")
 
+print sum(primes)
 
+## !!! then i manually subtracted off the last value - 2000003
