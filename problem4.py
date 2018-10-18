@@ -2,11 +2,12 @@
 
 
 #A palindromic number reads the same both ways.
-#The largest palindrome made from the product of two 2-digit numbers
-#is 9009 = 91 × 99.
+#The largest palindrome made from the product of two 2-digit numbers is 
+# 9009 
 
 #Find the largest palindrome made from the product of two 3-digit numbers.
 
+import copy
 
 def ispalindromidary(num):
     num = list(map(int, str(num)))
@@ -26,22 +27,24 @@ print(ispalindromidary(99))
 print(ispalindromidary(19240522))
 
 
-def rollthru(n,s):
+## inputs are the two 3 digit numbers
+def rollthru(n, s):
     dumblist=[]
     x = [x for x in range(100,n+1)][::-1]
-    y = [x for x in range(100,s+1)][::-1]
+    y = copy.deepcopy(x)
 
-    print(x,y)
+    # print(x,y, type(x), type(y))
     counter = 1
     for l in x:
         counter += 1
-        
+        print l
         for m in y[:counter]:
          
-            #print(l,m,l*m, ispalindromidary(l*m))
+            # print(l,m,l*m, ispalindromidary(l*m))
 
             if ispalindromidary(l*m):
-                print("hooray, it's:", ispalindromidary(l*m))
+                print("hooray, the palindrome's:", l, m, l*m)
+                
                 dumblist.append(l*m)
                 
     return dumblist
@@ -49,4 +52,4 @@ def rollthru(n,s):
 nlist = rollthru(999,999)
 print(nlist)
 
-print(nlist.sort())
+print(sorted(nlist, key=int, reverse=True))

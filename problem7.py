@@ -1,7 +1,8 @@
 #https://projecteuler.net/problem=7
 
 import math
-def findprimes(limit,sieve, plist, primelen): # sieve of eratosthenes w/ tricks
+
+def findprimes(limit, sieve, plist, primelen): # sieve of eratosthenes w/ tricks
     #print(limit, sieve, plist, "inputs")
     if not plist:
         sieve = [1] * int(math.sqrt(limit))
@@ -14,7 +15,7 @@ def findprimes(limit,sieve, plist, primelen): # sieve of eratosthenes w/ tricks
         sieve[0] = sieve[1] = 0
         
     p = []
-    #find primes less than limit
+    # find primes less than limit
     # create an array of all the values between 0 and limit
     
     for pos in range(0, int(math.sqrt(limit))):
@@ -22,7 +23,7 @@ def findprimes(limit,sieve, plist, primelen): # sieve of eratosthenes w/ tricks
         if sieve[pos] == 1:
         #it's prime so add it to list
             p.append(pos)
-            #print(pos, n, "<--found prime")
+            print(pos, "<--found prime")
             x = 1
             if len(p) >= primelen:
                 return(p, limit, sieve)
@@ -44,9 +45,10 @@ def findprimes(limit,sieve, plist, primelen): # sieve of eratosthenes w/ tricks
 primes = []
 sieve = []
 counter = 10
-while len(primes) < 6:
+while len(primes) < 1000:
     counter *= 10
-    primes, limit, sieve = findprimes(counter,sieve,primes, 6)
-    print(counter, "<=resized")
+    primes, limit, sieve = findprimes(counter, sieve, primes, 6)
+    print(counter, "<=resized", primes)
 
+print("\n\n")
 print(primes, limit, len(primes), "<--outer loop")

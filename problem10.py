@@ -53,7 +53,7 @@ counter = 10
 maxp = 2000000
 while 1:
     counter *= 10
-    primes, limit, sieve = findprimes(counter,sieve,primes, maxp)
+    primes, limit, sieve = findprimes(counter, sieve, primes, maxp)
     print(counter, "<=resized")
     if primes[-1] > maxp:
         print("list completed")

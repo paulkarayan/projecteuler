@@ -30,7 +30,7 @@ def naiveprimefinder(inputnum, listofprimes):
 
         while prime <= quotient:
             tempquotient, remainder = divmod(quotient, prime)
-            print(prime, remainder, quotient)
+            # print(prime, remainder, quotient)
 
             if remainder != 0:
                 break
@@ -42,9 +42,12 @@ def naiveprimefinder(inputnum, listofprimes):
 
     return(listofprimes)
 
-##for x in range(2,100):
-##    listofprimes = naiveprimefinder(x, listofprimes)
-        
+
+# # test naive prime finder
+# for x in range(2,100):
+#    listofprimes = naiveprimefinder(x, listofprimes)
+# print listofprimes
+
 
 def findprimessmall(n): # sieve of eratosthenes
     
@@ -102,9 +105,11 @@ def findprimes(n): # sieve of eratosthenes w/ tricks
     #print("findprimes:", p)
     return(p)
 
+## strategy: find all the primes below the specified number
+##           then, do factorization with them.
+# plist = findprimes(13195)
+# print primefactors(13195, plist)
 
-plist = findprimes(13195)
-primefactors(13195, listofprimes)
 
 plist = findprimes(600851475143)
 primefactors(600851475143, plist)

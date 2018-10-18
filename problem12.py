@@ -66,6 +66,6 @@ while summed < 500:
     if summed > maxsum:
         maxsum = summed
         print(num,maxsum)
-print(num, summed)
+print(num, summed, "<--- done")
     
 

@@ -1,6 +1,6 @@
 from math import factorial
 
-n = factorial(100)
+n = factorial(10)
 
 print(n)
 val = 0
