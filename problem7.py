@@ -23,7 +23,7 @@ def findprimes(limit, sieve, plist, primelen): # sieve of eratosthenes w/ tricks
         if sieve[pos] == 1:
         #it's prime so add it to list
             p.append(pos)
-            print(pos, "<--found prime")
+            # print(pos, "<--found prime")
             x = 1
             if len(p) >= primelen:
                 return(p, limit, sieve)
@@ -47,8 +47,8 @@ sieve = []
 counter = 10
 while len(primes) < 1000:
     counter *= 10
-    primes, limit, sieve = findprimes(counter, sieve, primes, 6)
-    print(counter, "<=resized", primes)
+    primes, limit, sieve = findprimes(counter, sieve, primes, 10001)
+    print(counter, "<=resized", primes, len(primes))
 
 print("\n\n")
 print(primes, limit, len(primes), "<--outer loop")
